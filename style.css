@@ -1,0 +1,159 @@
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .start-button {
+      padding: 15px 40px;
+      font-size: 1.3rem;
+      color: white;
+      background: linear-gradient(145deg, #00c6ff, #0072ff);
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.3s;
+      margin-bottom: 20px;
+    }
+
+    .start-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+    }
+
+    .turn-display {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+
+    .board {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 5px;
+      background-color: #ffffff10;
+      border-radius: 10px;
+    }
+
+    .cell {
+      background-color: #ffffff20;
+      border: 2px solid #ffffff80;
+      border-radius: 10px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      position: relative;
+    }
+
+    .cell.x { color: #ff4c4c; }
+    .cell.o { color: #4cbaff; }
+
+    /* Win line base */
+    .win-line {
+      position: absolute;
+      background: #00ff88;
+      box-shadow: 0 0 10px #00ff88;
+      height: 4px;
+      border-radius: 2px;
+      z-index: 5;
+    }
+
+    /* Row wins */
+    .win-row-1 { top: 50px; left: 10px; width: 280px; }
+    .win-row-2 { top: 150px; left: 10px; width: 280px; }
+    .win-row-3 { top: 250px; left: 10px; width: 280px; }
+
+    /* Column wins */
+    .win-col-1 {
+      transform: rotate(90deg);
+      transform-origin: left top;
+      top: 10px; left: 50px;
+      width: 280px;
+    }
+
+    .win-col-2 {
+      transform: rotate(90deg);
+      transform-origin: left top;
+      top: 10px; left: 150px;
+      width: 280px;
+    }
+
+    .win-col-3 {
+      transform: rotate(90deg);
+      transform-origin: left top;
+      top: 10px; left: 250px;
+      width: 280px;
+    }
+
+    /* Diagonal wins */
+    .win-diag-main {
+      top: 150px; left: 150px;
+      width: 400px;
+      transform: translate(-50%, -50%) rotate(45deg);
+      transform-origin: center;
+    }
+
+    .win-diag-anti {
+      top: 150px; left: 150px;
+      width: 400px;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      transform-origin: center;
+    }
+
+
+
+
+
+    .winner-message {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1a1a1a;
+  color: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  font-size: 24px;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.winner-message button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.winner-message button:hover {
+  background-color: #45a049;
+}
+
+.hidden {
+  display: none;
+}
