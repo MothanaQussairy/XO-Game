@@ -12,15 +12,6 @@ A simple and interactive XO (Tic-Tac-Toe) game built using only **HTML**, **CSS*
 - Responsive and clean design.
 - “Play Again” button after the game ends.
 
-## 📸 Screenshot
-
-![XO Game Screenshot](screenshot.png) <!-- optional: you can add a screenshot later -->
-
-## 🚀 Live Demo
-
-Play it here: [https://your-username.github.io/XO-Game](https://your-username.github.io/XO-Game)  
-<!-- Replace with your actual GitHub Pages URL -->
-
 ## 🧰 Technologies Used
 
 - HTML5
